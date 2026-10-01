@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111816">
+  <title>Script Cue</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Script Cue — choose screen"><span class="brand-icon">◧</span> SCRIPT CUE</a>
+    <span id="connection" class="connection" role="status">Connecting…</span>
+    <button id="switch-screen" class="quiet" hidden>Change screen</button>
+  </header>
+  <p id="notice" role="status" hidden></p>
+  <main>
+    <section id="chooser" class="chooser">
+      <p class="eyebrow">THE REHEARSAL ROOM</p>
+      <h1>Every line.<br>Right on cue.</h1>
+      <p class="intro">One shared script. Choose the screen you need on this device.</p>
+      <div class="role-grid">
+        <button class="role-card" data-role="operator"><span class="role-number">01 / CONTROL</span><strong>Operator Script <span>↗</span></strong><span>Follow the full script and move the current cue for everyone.</span><span class="role-tag">PHONE · LAPTOP</span></button>
+        <button class="role-card actor-choice" data-role="actor"><span class="role-number">02 / PERFORM</span><strong>Actor <span>↗</span></strong><span>Choose your character. See your next line and when to say it.</span><span class="role-tag">TABLET · SECOND SCREEN</span></button>
+      </div>
+      <div class="production"><span class="eyebrow">ON THE SCRIPT</span><p id="script-title">Loading the script…</p><span id="script-summary"></span></div>
+      <p class="shared-note">All devices on this site share the same cue. Each Actor screen chooses its own character.</p>
+    </section>
+
+    <section id="operator" class="operator" hidden>
+      <div class="screen-heading"><div><p class="eyebrow">YOU’RE IN CONTROL</p><h1>Operator Script</h1></div><button id="follow" class="quiet">Find current cue</button></div>
+      <div class="operator-tools">
+        <label class="scene-label">Scene<select id="scene-picker" aria-label="Jump to scene"></select></label>
+        <form id="jump-form"><label for="jump-input">Cue</label><input id="jump-input" type="number" inputmode="numeric" min="1" value="1" required><button type="submit" class="quiet">Go</button></form>
+      </div>
+      <div id="script" class="script" tabindex="0" aria-label="Full script"></div>
+      <footer class="cue-controls"><div class="cue-progress"><span id="cue-status"></span><span id="speaker-status"></span></div><div class="step-buttons"><button id="previous" class="previous">← Previous</button><button id="next" class="next">Next cue →</button></div><p class="keyboard-hint">Arrow keys: previous / next · Home / End: first / last</p></footer>
+    </section>
+
+    <section id="actor" class="actor" hidden>
+      <div class="screen-heading"><div><p class="eyebrow">YOUR PERSONAL CUE SCREEN</p><h1>Actor</h1></div><button id="fullscreen" class="quiet">Fullscreen</button></div>
+      <div class="actor-tools"><label>Character<select id="character"><option value="">Choose your character</option></select></label><label class="size-label">Text size<select id="text-size"><option value="auto">Auto</option><option value="medium">Medium</option><option value="large">Large</option><option value="extra">Extra large</option></select></label></div>
+      <div class="live-context"><span id="actor-speaker"></span><span id="actor-position"></span></div>
+      <article id="actor-card" class="actor-card unselected"><div class="actor-cue-heading"><span id="actor-state">READY WHEN YOU ARE</span><span id="target-cue"></span></div><p id="actor-text">Choose your character above.</p></article>
+      <p id="countdown" class="countdown" aria-live="polite">Select a character to begin</p>
+      <p class="actor-footnote">Your cues follow the Operator Script automatically.</p>
+    </section>
+  </main>
+  <noscript>This app needs JavaScript enabled to synchronize the screens.</noscript>
+</body>
+</html>

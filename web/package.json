@@ -1,0 +1,12 @@
+{
+  "name": "script-cue-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared Operator Script and Actor screens for phones and tablets",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

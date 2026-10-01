@@ -1,0 +1,112 @@
+:root { color-scheme: dark; font-family: 'Segoe UI', system-ui, sans-serif; color: #f2f4ee; background: #111816; --muted: #a4b3aa; --green: #ccf58c; --line: #34433b; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+button, select, input { font: inherit; }
+button, select { cursor: pointer; }
+button, input, select { min-height: 46px; border-radius: 8px; }
+button { border: 1px solid var(--line); padding: 10px 18px; color: inherit; background: #203027; font-weight: 650; touch-action: manipulation; }
+button:hover { filter: brightness(1.13); }
+button:disabled { cursor: default; opacity: .4; }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+select, input { border: 1px solid #516257; padding: 9px 12px; background: #18231d; color: #fff; max-width: 100%; }
+.topbar { min-height: 78px; padding: 15px clamp(16px, 4vw, 64px); display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); }
+.brand { text-decoration: none; color: inherit; font-size: 14px; font-weight: 750; letter-spacing: .14em; white-space: nowrap; }
+.brand-icon { color: var(--green); font-size: 27px; vertical-align: -3px; margin-right: 9px; }
+.connection { color: #ffbf82; font-size: 12px; margin-left: auto; }
+.connection::before { content: '●'; margin-right: 8px; }
+.connection.online { color: var(--green); }
+.quiet { background: transparent; font-size: 13px; }
+#notice { margin: 0; padding: 12px 24px; background: #493e21; color: #fff0c5; font-size: 14px; }
+.chooser { max-width: 1100px; margin: auto; padding: 64px 28px 30px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .17em; color: var(--muted); margin: 0 0 14px; }
+h1 { margin: 0; font-weight: 600; letter-spacing: -.055em; line-height: 1.06; }
+.chooser h1 { font-size: clamp(48px, 7vw, 82px); }
+.intro { color: var(--muted); font-size: 17px; margin: 24px 0 35px; line-height: 1.6; }
+.role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.role-card { min-height: 236px; border-radius: 14px; background: var(--green); color: #182318; padding: 26px; display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.role-card.actor-choice { background: #202e26; color: #f2f4ee; }
+.role-number, .role-tag { font-size: 10px; letter-spacing: .13em; }
+.role-card strong { display: flex; justify-content: space-between; align-items: center; font-size: 29px; font-weight: 600; letter-spacing: -.04em; }
+.role-card > span:not(.role-number):not(.role-tag) { font-size: 14px; line-height: 1.6; font-weight: 400; max-width: 330px; }
+.role-tag { margin-top: auto; padding-top: 5px; }
+.production { border-top: 1px solid var(--line); margin-top: 38px; padding-top: 26px; }
+.production p { font-size: 15px; line-height: 1.6; margin-bottom: 8px; }
+.production > span:last-child, .shared-note { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.shared-note { margin-top: 28px; }
+.screen-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 24px 0 20px; }
+.screen-heading h1 { font-size: 32px; }
+.screen-heading .eyebrow { margin-bottom: 8px; }
+.operator { max-width: 1040px; margin: auto; padding: 0 24px; height: calc(100dvh - 78px); display: flex; flex-direction: column; }
+.operator-tools { display: flex; gap: 16px; padding-bottom: 16px; }
+.operator-tools label, .actor-tools label { font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.scene-label { flex: 1; min-width: 0; }
+#scene-picker { width: 100%; font-size: 12px; }
+#jump-form { display: flex; gap: 8px; align-items: center; }
+#jump-input { width: 78px; }
+.script { flex: 1; min-height: 100px; overflow-y: auto; overscroll-behavior: contain; border-radius: 12px; background: #f3f1e8; color: #26352c; padding: 22px; scrollbar-color: #9bab9d #e5e5dc; }
+.script-section { color: #4b6254; font-size: 14px; letter-spacing: .07em; margin: 24px 12px 20px; line-height: 1.5; }
+.script-cue { padding: 20px; border: 2px solid transparent; border-radius: 8px; }
+.script-cue.current { background: #e3efb6; border-color: #7a9141; }
+.script-cue h3 { font-size: 12px; color: #526347; letter-spacing: .08em; margin: 0 0 12px; }
+.script-cue p { margin: 0; white-space: pre-wrap; font-size: 18px; line-height: 1.65; overflow-wrap: anywhere; }
+.direction { font-style: italic; color: #646e66; margin: 20px; line-height: 1.6; }
+.cue-controls { padding: 14px 0 max(12px, env(safe-area-inset-bottom)); }
+.cue-progress { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 12px; color: var(--muted); }
+#speaker-status { color: var(--green); }
+.step-buttons { display: grid; grid-template-columns: 1fr 1.4fr; gap: 12px; }
+.step-buttons button { min-height: 58px; font-size: 18px; }
+.next { background: var(--green); color: #182318; }
+.keyboard-hint { text-align: center; color: var(--muted); font-size: 11px; margin: 10px 0 0; }
+.actor { max-width: 1440px; margin: auto; padding: 0 32px 24px; height: calc(100dvh - 78px); display: flex; flex-direction: column; }
+.actor-tools { display: flex; justify-content: space-between; gap: 16px; }
+.actor-tools select { min-width: 150px; }
+.live-context { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 13px; margin: 26px 0 14px; }
+.actor-card { --cue-color: #8f9b94; border: 6px solid var(--cue-color); border-radius: 14px; padding: clamp(20px, 4vw, 52px); background: #080d0a; min-height: 140px; flex: 1; overflow-y: auto; overscroll-behavior: contain; }
+.actor-card.now { --cue-color: #53dc8c; }
+.actor-card.upcoming { --cue-color: #ef6c65; }
+.actor-cue-heading { color: var(--cue-color); display: flex; justify-content: space-between; gap: 12px; font-size: 11px; letter-spacing: .12em; font-weight: 750; }
+#actor-text { font-size: clamp(28px, 4vw, 56px); white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.4; font-weight: 600; margin: 30px 0 12px; }
+.actor-card[data-length="medium"] #actor-text { font-size: clamp(26px, 3.3vw, 44px); }
+.actor-card[data-length="long"] #actor-text { font-size: clamp(23px, 2.6vw, 34px); }
+.actor-card[data-size="medium"] #actor-text { font-size: 28px; }
+.actor-card[data-size="large"] #actor-text { font-size: 40px; }
+.actor-card[data-size="extra"] #actor-text { font-size: 56px; }
+.countdown { text-align: center; font-size: clamp(23px, 3vw, 38px); font-weight: 700; margin: 24px 0 10px; }
+.actor-card.now + .countdown { color: #53dc8c; }
+.actor-footnote { text-align: center; color: var(--muted); font-size: 12px; }
+.disconnected .actor-card { border-style: dashed; }
+@media (max-width: 650px) {
+  .topbar { min-height: 92px; gap: 10px; flex-wrap: wrap; padding: 12px 16px; }
+  .brand { font-size: 12px; }
+  .connection { font-size: 10px; order: 3; width: 100%; margin: 0; }
+  #switch-screen { margin-left: auto; min-height: 36px; padding: 6px 10px; font-size: 11px; }
+  .chooser { padding: 40px 20px 24px; }
+  .role-grid { grid-template-columns: 1fr; }
+  .role-card { min-height: 218px; padding: 22px; }
+  .operator { height: calc(100dvh - 92px); padding: 0 12px; }
+  .screen-heading { padding: 18px 0; }
+  .screen-heading h1 { font-size: 28px; }
+  .screen-heading .eyebrow { font-size: 9px; }
+  .operator-tools { flex-wrap: wrap; gap: 8px; padding-bottom: 10px; }
+  .scene-label { flex-basis: 100%; }
+  #jump-form { width: 100%; }
+  #jump-input { flex: 1; }
+  .script { padding: 8px; }
+  .script-cue { padding: 15px 12px; }
+  .script-cue p { font-size: 17px; }
+  .keyboard-hint { display: none; }
+  .actor { padding: 0 16px 20px; height: calc(100dvh - 92px); }
+  .actor-tools { flex-wrap: wrap; }
+  .actor-tools label { width: 100%; justify-content: space-between; }
+  .actor-tools select { flex: 1; max-width: 260px; }
+  .live-context { font-size: 11px; }
+  .actor-card { padding: 20px 16px; }
+  .actor-cue-heading { font-size: 9px; }
+}
+@media (max-height: 560px) and (orientation: landscape) {
+  .operator { height: auto; min-height: calc(100dvh - 78px); }
+  .script { max-height: 55dvh; min-height: 140px; }
+  .actor { height: auto; }
+  .actor-card { max-height: 55dvh; }
+}
